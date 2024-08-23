@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<div th:if="${user != null}">
+    <p>Hello, <span th:text="${user['name']}">User</span>!</p>
+    <p>Email: <span th:text="${user['email']}">Email</span></p>
+</div>
+<div th:if="${user == null}">
+    <a href="/oauth2/authorization/client">Login with OAuth2</a>
+</div>
+</body>
+</html>
